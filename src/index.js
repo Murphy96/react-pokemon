@@ -13,14 +13,13 @@ import pokeCard from './containers/pokeCard';
 
 ReactDOM.render(
   <Provider store={store}>
-            <ConnectedRouter history={history}>
-               {/* <App></App>*/}
-               <Switch>
-                  <Route path='/poke-List/:id' component={pokeList}/>
-                  <Route path='/pokemon/:pokemonIndex' component={pokeCard}/>
-                  
-              </Switch>
-            </ConnectedRouter>    
+    <ConnectedRouter history={history}>
+      {/* <App></App>*/}
+      <Switch>
+        <Route path='/poke-List/:id' component={pokeList}/>
+        <Route path='/pokemon/:pokemonIndex' component={pokeCard}/>
+      </Switch>
+    </ConnectedRouter>    
   </Provider>, document.getElementById('root')
 );
 reportWebVitals()
