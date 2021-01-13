@@ -8,6 +8,8 @@ import {history} from '../../store/configure_store'
 const PokemonList = ({ pokemons, LoadPokemon }) => { 
     const { id } = useParams(); 
     const limit = 8;
+
+    
     //const [redirect, setRedirect]= useState(false)
     useEffect(() => {
         LoadPokemon(id, limit);
@@ -33,6 +35,8 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
     }
    //if (redirect)return <Redirect to={`/pokemon/${redirect.pokeIndex}`}/>
     
+   const [search, setSearch] = useState("");
+
     const Sprite = styled.img`
         width: 5em;
         height: 5em;
@@ -52,8 +56,13 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
     -o-user-select: none;
     `;
    
+
+    const filteredItems = pokemons.pokemones.filter((pokemon) => {
+        return pokemon.name.toLowerCase().includes(search.toLowerCase());
+      });
+
     const rows =[];
-    pokemons.pokemones.forEach((data)=>{
+    filteredItems.forEach((data)=>{
         console.log(data.Index)
         rows.push(
             <div className='col-md-3 col-sn-6 mb-5' onClick ={ ()=>{console.log("cli")
@@ -69,6 +78,8 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
             </div>
         )
     });
+
+    
     return (
         <>
           <div className="App">
@@ -77,6 +88,7 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
                 </div>
             <br></br>
             <br></br>
+            <input type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)}/> {search}
             <div className="container">
                 <div className="row">
                     <div className="col">
