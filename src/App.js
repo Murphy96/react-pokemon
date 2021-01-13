@@ -1,65 +1,24 @@
-
-import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import NavBar from './components/layout/NavBar'
-import Deshboard from './components/layout/Deshboard'
-
+import React from 'react'
 import './App.css'
+import { Route, Switch } from 'react-router-dom';
+import pokeList from './containers/pokemonList'
+import pokeCard from './containers/pokeCard';
+import HomeScreen from './components/Home/HomeScreen';
+import NavBar from './components/layout/NavBar';
 
-const App =()=> 
-{
+const App = () => {
   return (
-    <div className="App">
+    <div>
+      <div>
 
-      <NavBar />
-      <div className="container">
-        <Deshboard />
       </div>
-      <tbody>
-      
- 
-      </tbody>
-      <table style={{ width: '100%' }}>
-        <thead>
-          <tr style={{ textAlign: 'left' }}>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Stage</th>
-            <th>Species</th>
-            <th>Caught</th>
-          </tr>
-        </thead>
-        <tbody>
-         
-        </tbody>
-      </table>
-      
-
-      <h1>Pokedex in Redux</h1>
-      <form>
-        <div>
-          
-        </div>
-      </form>
-     
-      <table style={{ width: '100%' }}>
-        <thead>
-          <tr style={{ textAlign: 'left' }}>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Stage</th>
-            <th>Species</th>
-            <th>Caught?</th>
-          </tr>
-        </thead>
-        <tbody>
-         
-        </tbody>
-      </table>
+      <NavBar />
+      <Switch>
+        <Route path='/poke-list/:id' component={ pokeList } />
+        <Route path='/pokemon/:pokemonIndex' component={ pokeCard } />
+        <Route path='/' component={HomeScreen} />
+      </Switch>
     </div>
-    
-    
   )
 }
-
 export default App;

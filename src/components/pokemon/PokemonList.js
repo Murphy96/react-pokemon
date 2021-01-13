@@ -73,7 +73,7 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
         <>
           <div className="App">
                 <div className="d-flex align-items-stretch" style={{ width: "10000px" }}>
-                    <NavBar />
+                    {/* <NavBar /> */}
                 </div>
             <br></br>
             <br></br>

@@ -1,8 +1,7 @@
 import { connect } from 'react-redux'
 import {withRouter} from "react-router-dom";
 import { getPokemon } from '../store/actions/pokeCard';
-import PokeCard from '../components/pokemon/PokeCard';
-import { Pokemon } from '../store/reducers/pokeCard';
+import PokeCardScreen from '../components/pokemon/PokeCardScreen';
 
 const mapStateToProps = (state) => {
     return {
@@ -22,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
         }
     };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter (PokeCard));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter ( PokeCardScreen ));

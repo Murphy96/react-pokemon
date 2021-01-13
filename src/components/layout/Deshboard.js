@@ -6,7 +6,6 @@ export default class Deshboard extends Component{
         return(
             <div className="row">
                 <div className="col">
-                    
                     <PokemonList/>
                 </div>
             </div>
