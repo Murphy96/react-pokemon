@@ -9,6 +9,7 @@ const PokeCard = ({ Pokemon, getPokemon }) => {
     useEffect(() => {
         getPokemon(pokemonIndex);
     }, [getPokemon, pokemonIndex]);
+    
     const After = () => {
         if (pokemonIndex === 898) {
             history.push(`/pokemon/${(+pokemonIndex) - 897}`);
@@ -29,6 +30,7 @@ const PokeCard = ({ Pokemon, getPokemon }) => {
     return (
         <div className="col">
             <div className="card">
+
                 <TypePokemon Pokemon={Pokemon} />
 
                 <div className="card-body">

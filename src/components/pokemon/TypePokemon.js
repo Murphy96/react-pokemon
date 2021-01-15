@@ -31,10 +31,10 @@ const TypePokemon = ({ Pokemon }) => {
                 <div className="col-7">
                     <div className="float-right">
                         {
-                            Pokemon.types.map((type) => (
+                            Pokemon.types.map(type => (
                                 <span
                                     key={type}
-                                    className="badge badge-pill mr-2"
+                                    className="badge badge-pill mr-4"
                                     style={{
                                         backgroundColor: `#${TYPE_COLORS[type]}`,
                                         color: 'white'

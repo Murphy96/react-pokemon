@@ -7,8 +7,6 @@ export const defaultPokemon = {
     imageUrl: '',
     types: [],
     description: '',
-    statTitleWidth: 3,
-    statBarWidth: 9,
     stats: {
       hp: '',
       attack: '',

@@ -29,8 +29,6 @@ export const getPokemon = (idPoke) => {
                 imageUrl: pokemon.sprites.front_default,
                 types: pokemon.types.map(type => type.type.name),
                 description: '3',
-                statTitleWidth: 3,
-                statBarWidth: 9,
                 stats: {
                     hp: stat[0],
                     attack: stat[1],
@@ -48,7 +46,6 @@ export const getPokemon = (idPoke) => {
                 genderRatioFemale: '',
                 evs: '',
                 hatchSteps: '',
-                themeColor: '#EF5350'
             }
             console.log ("Aqui esta el Pokemon", Pokemon);
             dispatch({type: TYPES.GET_POKEMON, Pokemon})
