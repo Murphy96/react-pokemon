@@ -37,7 +37,7 @@ const TypePokemon = ({ Pokemon }) => {
                                     className="badge badge-pill mr-4"
                                     style={{
                                         backgroundColor: `#${TYPE_COLORS[type]}`,
-                                        color: 'white'
+                                        color: 'black'
                                     }}
                                 >
                                     {

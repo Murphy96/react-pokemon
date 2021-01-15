@@ -24,19 +24,21 @@ export const defaultPokemon = {
     genderRatioFemale: '',
     evs: '',
     hatchSteps: '',
-    themeColor: '#EF5350'
-  };
+    themeColor: '#EF5350',
+  }
 
 export const Pokemon = (state = {...defaultPokemon}, action) => {
-    let newState;
-    console.log('REDUCER Pokemon', action);
     switch (action.type) {
       case TYPES.CREATE_POKEMON:
-          return {...state, Pokemon: action.Pokemon}
+          return {
+            ...state,
+            Pokemon: action.Pokemon
+          }
         case TYPES.GET_POKEMON:
-           // console.log(action.pokemones)
-            return {...state, ...action.Pokemon}
-       
+            return {
+              ...state, 
+              ...action.Pokemon,
+            }
         default:
             return state;
     }

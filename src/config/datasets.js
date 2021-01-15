@@ -13,7 +13,6 @@ export const postData = (url, body, token) => {
 }
 
 export const postDataMultipart = (url, body, token) => {
-    console.log('my body ', body);
     const headers = token ? MultiPartOptions(token) : MultiPart();
     return fetch(url, {
         method: 'POST',
@@ -42,7 +41,6 @@ export const putData = (url, body, token) => {
 }
 
 export const getData = (url, token) => {
-    console.log(url,"data sets")
     const headers = token ? JSONOptions(token) : JSONDefault();
     return fetch(url, {
         method: 'GET',
@@ -50,9 +48,7 @@ export const getData = (url, token) => {
     })
     .then(response => response.json())
     .then(data => (data))
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => (err));
     
 }
 

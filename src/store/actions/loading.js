@@ -1,7 +1,20 @@
-import { LOAD_POKEMONS } from "../types/pokemon"
+import { LOADING_PAGE_FAILURE, LOADING_PAGE_REQUEST, LOADING_PAGE_SUCCESS } from '../types/loading';
 
-export const loadPokemon = () => {
+export const loadPokemonRequest = () => {
     return {
-        type: LOAD_POKEMONS,
+        type: LOADING_PAGE_REQUEST,
     }
 }
+export const loadPokemonSuccess = () => {
+    return {
+        type: LOADING_PAGE_SUCCESS,
+    }
+}
+export const loadPokemonFailure = ( error ) => {
+    return {
+        type: LOADING_PAGE_FAILURE,
+        error
+
+    }
+}
+

@@ -2,7 +2,6 @@ import React from 'react';
 
 const PokemonPower = ({ stats, kindOfPower, numberScale = 250 }) => {
 
-
     const numberToConvertToAnotherScale = ( number ) => ( 100/number );
 
     return (
@@ -16,14 +15,14 @@ const PokemonPower = ({ stats, kindOfPower, numberScale = 250 }) => {
                         className="progress-bar "
                         role="progressbar"
                         style={{
-                            width: `${ parseInt( stats *numberToConvertToAnotherScale(numberScale))}%`,
+                            width: `${ +(stats * numberToConvertToAnotherScale(numberScale)) }%`,
                             backgroundColor: `#EF5350`
                         }}
                         aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
                     >
-                        <small>{ `${ parseInt( stats*numberToConvertToAnotherScale(numberScale))}%`}</small>
+                        <small>{ `${ stats }`}</small>
                     </div>
                 </div>
             </div>

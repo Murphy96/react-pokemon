@@ -23,7 +23,8 @@ export const LoadPokemon = (idPoke, limit) => {
             console.log(result.results);
             result.results.forEach(data => {
                 //crear el id del pokemon
-                const num= data.url.split(`/`)[data.url.split(`/`).length -2];//https://pokeapi.co/api/v2/pokemon/1/ ---> "https:","","pokeapi.co","api","v2", "pokemon", "1", ""
+                const num= data.url.split(`/`)[data.url.split(`/`).length -2];
+                //https://pokeapi.co/api/v2/pokemon/1/ ---> "https:","","pokeapi.co","api","v2", "pokemon", "1", ""
                 pokemones.push({
                     pokeIndex: num,
                     name: data.name,
@@ -45,6 +46,8 @@ export const getPokemons = () => {
     return async (dispatch) => {
         //const poke= await fetch(SERVER.URL_BASE );
         //const result= await poke.json();
+
+
         const result = await getData(SERVER.URL_ALL, null)
         let pokemones= [];
         if (result) {

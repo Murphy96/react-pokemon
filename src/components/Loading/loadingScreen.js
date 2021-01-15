@@ -1,11 +1,12 @@
 import React from 'react';
-
-const loading = () => {
+import Spinner from 'react-bootstrap/Spinner'
+const LoadingScreen = () => {
     return (
-        <div>
-            <h1>loading</h1>
+        <div className="p-5 m-5 text-center">
+            <h1 className="text-danger">Loading...</h1>
+            <Spinner animation="border" role="status" className="text-danger" />
         </div>
     )
 }
 
-export default loading;
+export default LoadingScreen;

@@ -8,8 +8,6 @@ export const defaultPokemons = {
   };
 
 export const pokemons = (state = {...defaultPokemons}, action) => {
-    let newState;
-    console.log('REDUCER Pokemon', action);
     switch (action.type) {
         case TYPES.GET_POKEMONS:
            // console.log(action.pokemones)
