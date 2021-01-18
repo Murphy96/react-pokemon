@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Nav } from 'react-bootstrap'
+import { Nav, Button } from 'react-bootstrap'
 import NavBar from '../layout/NavBar'
-import {  NavLink,Link, Redirect , useParams} from 'react-router-dom';
+import {  NavLink, Link, Redirect , useParams} from 'react-router-dom';
 import {history} from '../../store/configure_store'
 
 const PokemonList = ({ pokemons, LoadPokemon }) => { 
@@ -65,15 +65,18 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
     filteredItems.forEach((data)=>{
         console.log(data.Index)
         rows.push(
-            <div className='col-md-3 col-sn-6 mb-5' onClick ={ ()=>{console.log("cli")
-            linkPoke(data.pokeIndex)  } }>
+            <div className='col-md-3 col-sn-6 mb-5'>
                 <Card className='card'>
                     <h5 className='card-header'>{data.pokeIndex}</h5>
                         <Sprite src={data.imageUrl} />
                     <div className="card-body mx-auto">
                         <h6 className="card-title">  {data.name} </h6>
                     </div>
-                   
+                    <div>
+                    <Button className="btn-primary"  onClick ={ ()=>{console.log("cli")
+                     linkPoke(data.pokeIndex)  } }>Features</Button>
+                    <Link to={`/pokemonvs/${data.pokeIndex}`}><Button className="btn-warning">Compare</Button></Link> 
+                    </div>
                 </Card>
             </div>
         )
@@ -88,7 +91,7 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
                 </div>
             <br></br>
             <br></br>
-            <input type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)}/> {search}
+           Search Pokemon: <input type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)}/>
             <div className="container">
                 <div className="row">
                     <div className="col">

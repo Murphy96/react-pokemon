@@ -4,8 +4,9 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import { useParams } from 'react-router'
-import LoadingScreen from '../../Loading/LoadingScreen';
+
 import { Link } from 'react-router-dom';
+//import LoadingScreen from '../../Loading/LoadingScreen'
 
 const TypesOfPokemons = ({ typesOfPokemons, getPokemonsByType }) => {
     
@@ -19,7 +20,8 @@ const TypesOfPokemons = ({ typesOfPokemons, getPokemonsByType }) => {
     console.log( typesOfPokemons.typesOfPokemons.pokemon );
     if( typesOfPokemons.loading ){
         return(
-            <LoadingScreen />
+           //<LoadingScreen/>
+           <div>Loading</div>
         )
     }
     

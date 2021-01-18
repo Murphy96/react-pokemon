@@ -7,6 +7,7 @@ import HomeScreen from './components/Home/HomeScreen';
 import NavBar from './components/layout/NavBar';
 import typesOfPokemons from './containers/typesOfPokemons';
 import TypesOfPokemonsScreen from './components/pokemon/TypesOfPokemons/TypesOfPokemonsScreen';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   return (

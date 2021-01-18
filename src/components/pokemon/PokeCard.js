@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { history } from '../../store/configure_store'
 import TypePokemon from './TypePokemon';
 import PokemonPowerList from './PokemonPowerList';
-import LoadingScreen from '../Loading/LoadingScreen';
+//import LoadingScreen from '../Loading/LoadingScreen';
+
 
 const PokeCard = ({ Pokemon, getPokemon,  loadPokemon, loadPokemonError }) => {
     
@@ -48,7 +49,8 @@ const PokeCard = ({ Pokemon, getPokemon,  loadPokemon, loadPokemonError }) => {
 
     if( loadPokemon ){
         return(
-            <LoadingScreen />
+            //<LoadingScreen/>
+            <div>Loading</div>
         )
     }else{
         return (

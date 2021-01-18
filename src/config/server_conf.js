@@ -4,6 +4,7 @@ const SPECIE_URL = 'https://pokeapi.co/api/v2/pokemon-species'
 const TYPE_POKEMON = 'https://pokeapi.co/api/v2/type'
 // const URL_ALL2='https://pokeapi.co/api/v2/pokemon?limit=100&offset=200'
 const URL_ALL='https://pokeapi.co/api/v2/pokemon?limit=100&offset=0'
+const URL_RANDOM = 'https://pokeapi.co/api/v2/pokemon?'
 export const SERVER= (function () {
     const URL_BASE ={
         BASE: BASE_URL,
