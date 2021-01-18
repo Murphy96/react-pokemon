@@ -1,13 +1,16 @@
 import React from 'react';
 
-const PokemonPower = ({ stats, kindOfPower, numberScale = 250 }) => {
+const PokemonPowerVs = ({ stats, kindOfPower, numberScale = 250, newStats }) => {
 
     const numberToConvertToAnotherScale = ( number ) => ( 100/number );
+
+    const statsCompare = stats - newStats;
 
     return (
         <div className="row">
             <div className={`col-12 col-md-3`}>
                 { kindOfPower }
+                <p>{statsCompare}</p>
             </div>
             
             <div className={`col-12 col-md-9`}>
@@ -31,4 +34,4 @@ const PokemonPower = ({ stats, kindOfPower, numberScale = 250 }) => {
     )
 }
 
-export default PokemonPower;
+export default PokemonPowerVs;

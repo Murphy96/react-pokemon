@@ -1,7 +1,7 @@
 import React from 'react'
-import PokemonPower from './PokemonPower'
+import PokemonPowerVs from './PokemonPowerVs'
 
-const PokemonPowerList = ({ Pokemon}) => {
+const PokemonPowerListVs = ({ Pokemon, newPokemon }) => {
     const powersPokemon = [
         'hp',
         'attack',
@@ -14,10 +14,11 @@ const PokemonPowerList = ({ Pokemon}) => {
         <>
             {
                 powersPokemon.map( (power, index) => (
-                    <PokemonPower 
+                    <PokemonPowerVs 
                         key={ `${power}_${index}` } 
                         stats={ Pokemon.stats[power].base_stat } 
                         kindOfPower={ power } 
+                        newStats ={newPokemon.stats[power].base_stat}
                         
                     />
                 ))
@@ -27,4 +28,4 @@ const PokemonPowerList = ({ Pokemon}) => {
     )
 }
 
-export default PokemonPowerList
+export default PokemonPowerListVs;

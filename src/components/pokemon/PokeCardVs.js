@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TypePokemon from './TypePokemon';
-import PokemonPowerList from './PokemonPowerList';
+import PokemonPowerListVs from './PokemonPowerListVs';
 
 
 const TYPE_COLORS = {
@@ -75,7 +75,7 @@ const PokeCardVs = ({Pokemon, NewPokemon}) => {
                                   .join(' ')
                           }
                       </h4>
-                      <PokemonPowerList Pokemon={ Pokemon } />
+                      <PokemonPowerListVs Pokemon={ Pokemon } newPokemon={NewPokemon} />
                   </div>
 
               </div>
@@ -110,7 +110,7 @@ const PokeCardVs = ({Pokemon, NewPokemon}) => {
                                   .join(' ')
                           }
                       </h4>
-                      <PokemonPowerList Pokemon={ NewPokemon } />
+                      <PokemonPowerListVs Pokemon={ NewPokemon } newPokemon={Pokemon} />
                   </div>
 
               </div>
