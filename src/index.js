@@ -14,15 +14,14 @@ import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <Provider store={store}>
-            <ConnectedRouter history={history}>
-              <App></App>
-               <Switch>
-                  <Route path='/poke-List/:id' component={pokeList}/>
-                  <Route path='/pokemon/:pokemonIndex' component={pokeCard}/>
-                  <Route path='/pokemonvs/:id' component={pokemonvs}/>
-                  
-              </Switch>
-            </ConnectedRouter>    
+    <ConnectedRouter history={history}>
+      <App />
+      <Switch>
+        <Route path='/poke-List/:id' component={pokeList} />
+        <Route path='/pokemon/:pokemonIndex' component={pokeCard} />
+        <Route path='/pokemonvs/:id' component={pokemonvs} />
+      </Switch>
+    </ConnectedRouter>
   </Provider>, document.getElementById('root')
 );
 reportWebVitals()

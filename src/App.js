@@ -14,12 +14,12 @@ const App = () => {
     <div>
       <NavBar />
       <Switch>
-        <Route path='/poke-list/:id' component={ pokeList } />
-        <Route path='/pokemon/:pokemonIndex' component={ pokeCard } />
-        <Route path='/type-of-pokemons/:typePokemon' component={ typesOfPokemons } />
-        <Route path='/type-of-pokemons' component={ TypesOfPokemonsScreen } />
-        <Route path='/' component={ HomeScreen } />
-        <Redirect to='/'/>
+        <Route path='/poke-list/:id' component={pokeList} />
+        <Route path='/pokemon/:pokemonIndex' component={pokeCard} />
+        <Route path='/type-of-pokemons/:typePokemon' component={typesOfPokemons} />
+        <Route path='/type-of-pokemons' component={TypesOfPokemonsScreen} />
+        <Route path='/' component={HomeScreen} />
+        <Redirect to='/' />
       </Switch>
     </div>
   )

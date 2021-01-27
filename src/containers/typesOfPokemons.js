@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getPokemonsByType: (typePokemon) => {
-            dispatch (getPokemonsByType(typePokemon));  
+            dispatch (getPokemonsByType(typePokemon));
         }
     };
 };

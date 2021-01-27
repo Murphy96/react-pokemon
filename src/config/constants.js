@@ -1,0 +1,22 @@
+export const LIMIT_OF_POKEMON = 897;
+export const TYPE_COLORS = {
+  // Capital Letter fix
+  BUG: 'B1C12E',
+  DARK: '4F3A2D',
+  DRAGON: '755EDF',
+  ELECTRIC: 'FCBC17',
+  FAIRY: 'F4B1F4',
+  FIGHTING: '823551D',
+  FIRE: 'E73B0C',
+  FLYING: 'A3B3F7',
+  GHOST: '6060B2',
+  GRASS: '74C236',
+  GROUND: 'D3B357',
+  ICE: 'A3E7FD',
+  NORMAL: 'C8C4BC',
+  POISON: '934594',
+  PSYCHIC: 'ED4882',
+  ROCK: 'B9A156',
+  STEEL: 'B5B5C3',
+  WATER: '3295F6'
+};

@@ -5,11 +5,11 @@ import NavBar from '../layout/NavBar'
 import {  NavLink, Link, Redirect , useParams} from 'react-router-dom';
 import {history} from '../../store/configure_store'
 
-const PokemonList = ({ pokemons, LoadPokemon }) => { 
-    const { id } = useParams(); 
+const PokemonList = ({ pokemons, LoadPokemon }) => {
+    const { id } = useParams();
     const limit = 8;
 
-    
+
     //const [redirect, setRedirect]= useState(false)
     useEffect(() => {
         LoadPokemon(id, limit);
@@ -27,14 +27,14 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
     }
     const Before = ()=>{
         if(id <= 8 ){
-            history.push(`/poke-List/${880}`)           
+            history.push(`/poke-List/${880}`)
         }
         else{
             history.push(`/poke-List/${new Number (id) -8}`)
-        }        
+        }
     }
    //if (redirect)return <Redirect to={`/pokemon/${redirect.pokeIndex}`}/>
-    
+
    const [search, setSearch] = useState("");
 
     const Sprite = styled.img`
@@ -55,12 +55,12 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
     user-select: none;
     -o-user-select: none;
     `;
-   
+
 
     const filteredItems = pokemons.pokemones.filter((pokemon) => {
         return pokemon.name.toLowerCase().includes(search.toLowerCase());
       });
-
+    console.log(filteredItems,'@@@@@@@@@@@@@')
     const rows =[];
     filteredItems.forEach((data)=>{
         console.log(data.Index)
@@ -75,14 +75,14 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
                     <div>
                     <Button className="btn-primary"  onClick ={ ()=>{console.log("cli")
                      linkPoke(data.pokeIndex)  } }>Features</Button>
-                    <Link to={`/pokemonvs/${data.pokeIndex}`}><Button className="btn-warning">Compare</Button></Link> 
+                    <Link to={`/pokemonvs/${data.pokeIndex}`}><Button className="btn-warning">Compare</Button></Link>
                     </div>
                 </Card>
             </div>
         )
     });
 
-    
+
     return (
         <>
           <div className="App">
@@ -98,22 +98,22 @@ const PokemonList = ({ pokemons, LoadPokemon }) => {
                          <div className="row">{rows}</div>
                     </div>
                 </div>
-            </div>  
+            </div>
             <button type="button" class="btn btn-danger" onClick ={ ()=>{console.log("cli")
-            Before()  } } > 
+            Before()  } } >
                 <div className="sidebar-list-item">
                         <i className="o-table-content-1 mr-3 text-gray"></i>
                         Before
                 </div>
             </button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-danger" onClick ={ ()=>{console.log("cli")
-            After()  } } > 
+            After()  } } >
                 <div className="sidebar-list-item">
                         <i className="o-table-content-1 mr-3 text-gray"></i>
                         After
                 </div>
             </button>
-             </div>   
+             </div>
         </>
     );
 }
